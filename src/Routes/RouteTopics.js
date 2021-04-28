@@ -8,7 +8,7 @@ function RouteApp({ dataRouteMatch }) {
 
   return (
     <Switch>
-      <Route exact path={`${path}/`}>
+      <Route exact path={`${path}`}>
         hello
       </Route>
       <Route exact path={`${path}/:id`} component={Topic} />

@@ -7,7 +7,7 @@ function RouteApp() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/topic" component={Topics} />
+      <Route path="/topic" component={Topics} />
     </Switch>
   );
 }

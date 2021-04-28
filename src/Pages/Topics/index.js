@@ -1,34 +1,34 @@
 import React from "react";
 // import {} from 'react-bootstrap'
-import { BrowserRouter as Router, Link, useRouteMatch } from "react-router-dom";
-import RouteTopics from "./../../Routes/RouteTopics";
+import { Link, useRouteMatch } from "react-router-dom";
+import RouteTopics from "../../Routes/RouteTopics";
+import { defaultTopics } from "../../Constant/topics";
+
+export const TopicsContext = React.createContext();
 
 function Topic() {
   let match = useRouteMatch();
 
   return (
-    <Router>
+    <React.Fragment>
       <h3>List of topics</h3>
 
       <div>
         <ul>
-          <li>
-            <Link to={`${match.url}/`}>Hello</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/1`}>Topic 1</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/2`}>Topic 2</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/3`}>Topic 3</Link>
-          </li>
+          {defaultTopics.map((item, index) => {
+            return (
+              <li key={item.id}>
+                <Link to={`${match.url}/${item.id}`}>{item.title}</Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
-      <RouteTopics dataRouteMatch={match} />
-    </Router>
+      <TopicsContext.Provider value={defaultTopics}>
+        <RouteTopics dataRouteMatch={match} />
+      </TopicsContext.Provider>
+    </React.Fragment>
   );
 }
 
