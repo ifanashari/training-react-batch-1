@@ -13,12 +13,11 @@ function TopNavigation() {
           <Link to={"/"} className="text-white">
             Home
           </Link>
-
           <Link to={"/topic"} className="text-white">
             Topics
           </Link>
-          <Link to={"/about"} className="text-white">
-            About
+          <Link to={"/posts"} className="text-white">
+            Posts
           </Link>
         </div>
       </Container>

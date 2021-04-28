@@ -26,7 +26,7 @@ function Topic() {
       </div>
 
       <TopicsContext.Provider value={defaultTopics}>
-        <RouteTopics dataRouteMatch={match} />
+        <RouteTopics />
       </TopicsContext.Provider>
     </React.Fragment>
   );
